@@ -1,6 +1,11 @@
 from datetime import datetime
 
-date = datetime(year=2022, month=2, day=24)
-current_date = datetime.now()
-delta = current_date - date
-print (delta)
+def get_days_from_today(date_str):
+    date = datetime.strptime(date_str, '%Y-%m-%d')
+    current_date = datetime.today()
+    delta = current_date - date
+    return delta.days
+
+date_str = '2022-02-24'
+days_difference = get_days_from_today(date_str)
+print(days_difference)
